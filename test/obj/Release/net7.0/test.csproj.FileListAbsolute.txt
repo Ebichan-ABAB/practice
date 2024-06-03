@@ -1,0 +1,15 @@
+/Users/ebisawaryoga/VisualStudio/test/test/bin/Release/net7.0/test
+/Users/ebisawaryoga/VisualStudio/test/test/bin/Release/net7.0/test.deps.json
+/Users/ebisawaryoga/VisualStudio/test/test/bin/Release/net7.0/test.runtimeconfig.json
+/Users/ebisawaryoga/VisualStudio/test/test/bin/Release/net7.0/test.dll
+/Users/ebisawaryoga/VisualStudio/test/test/bin/Release/net7.0/test.pdb
+/Users/ebisawaryoga/VisualStudio/test/test/obj/Release/net7.0/test.csproj.AssemblyReference.cache
+/Users/ebisawaryoga/VisualStudio/test/test/obj/Release/net7.0/test.GeneratedMSBuildEditorConfig.editorconfig
+/Users/ebisawaryoga/VisualStudio/test/test/obj/Release/net7.0/test.AssemblyInfoInputs.cache
+/Users/ebisawaryoga/VisualStudio/test/test/obj/Release/net7.0/test.AssemblyInfo.cs
+/Users/ebisawaryoga/VisualStudio/test/test/obj/Release/net7.0/test.csproj.CoreCompileInputs.cache
+/Users/ebisawaryoga/VisualStudio/test/test/obj/Release/net7.0/test.dll
+/Users/ebisawaryoga/VisualStudio/test/test/obj/Release/net7.0/refint/test.dll
+/Users/ebisawaryoga/VisualStudio/test/test/obj/Release/net7.0/test.pdb
+/Users/ebisawaryoga/VisualStudio/test/test/obj/Release/net7.0/test.genruntimeconfig.cache
+/Users/ebisawaryoga/VisualStudio/test/test/obj/Release/net7.0/ref/test.dll
