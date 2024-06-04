@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <head>
     <style>
       #container {
@@ -8,45 +10,97 @@
         background-image: url("images/background-pc.png");
         background-color: blue;
         background-size: contain;
+        text-align: center;
       }
 
-      #detail {
-        background-image: url("images/background2-pc.png");
-        background-size: contain;
-        background-repeat: no-repeat;
+      #answerform {
+        height: auto;
+        width: auto;
+      }
+
+      #answer {
+        width: 200px;
+        height: 50px;
+      }
+
+      #submit {
+        width: 60px;
+        height: 50px;
+      }
+
+      #modal-back {
         width: 100vw;
-        height: 33.28vw;
-        padding-left: 2.5%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.3);
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        top: 0;
+        left: 0;
       }
 
-      #main-text {
-        width: 95%;
+      #modal-content {
+        width: 70%;
+        height: 80%;
+        background-color: white;
+        margin: auto;
+        text-align: center;
+        margin: auto;
       }
 
       p {
-        
-        font-size: 2.05vw;
-        color: white;
+        color: black;
         font-family: sans-serif;
-        font-weight: 600;
-      }
-
-      #top {
-        margin-top: 8vw;
+        font-weight: 700;
+        font-size: medium;
       }
     </style>
   </head>
   <body>
     <div id="container">
-      <div id="detail">
-        <div id="main-text">
-      <p id="top">【KOTOパスポート】を使ったスタンプラリー&謎解きイベントを開催!!</p>
-<p>
-区と包括協定を締結した(独)国立印刷局作製の「KOTOパスポート」を使い、お得に楽しく区内を巡り江東区の魅力を発見できるスタンプラリーイベントが6月から、また謎解きイベントが9月から開始！</p>  
-<p>
-スタンプラリーや謎解きだけでなく、12箇所の特典、スタンプラリーと謎解きイベントそれぞれの賞品への応募チャンス、区内共通商品券など、江東区の街を巡りながら様々な楽しさを味わえる企画です。是非ご参加ください。</p>
+      <p>解答サイト</p>
+      <form id="answerform">
+        <label>解答:</label>
+        <input type="text" id="answer">
+        <input type="submit" id="submit" value="送信">
+      </form>
+      <div class="modal" id="modal-back">
+        <div class="modal" id="modal-content">
+            <p id="resulttext"></p>
         </div>
+      </div>
     </div>
-    </div>
+
+    <script>
+        const useranswer = document.getElementById("answer");
+        const form = document.getElementById("answerform");
+        const resulttext = document.getElementById("resulttext");
+        const resultmodal = document.getElementById("modal-back");
+
+        function showmodal() {
+            resultmodal.style.display  = "flex";
+        }
+
+        form.addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            if(useranswer.value === "こたえ") {
+                resulttext.textContent = "正解！おめでとう！";
+            } else {
+                resulttext.textContent = "残念...間違ってるよ";
+            }
+            showmodal();
+        });
+
+        function hidemodal() {
+            resultmodal.style.display = "none";
+        }
+
+        resultmodal.addEventListener("click", function (event) {
+            if (event.target === resultmodal) {
+                hidemodal();
+            }
+        });
+    </script>
   </body>
 </html>
