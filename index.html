@@ -52,13 +52,28 @@
         color: black;
         font-family: sans-serif;
         font-weight: 700;
-        font-size: large;
+        font-size: xx-large;
         font-size: medium;
       }
 
       #hide {
         width: 70px;
         height: 40px;
+      }
+
+      .square {
+        width: 200px;
+        height: 200px;
+        line-height: 200px;
+        background-color: black;
+        border-color: blue;
+        border: 5px;
+      }
+
+      #difficulty {
+        color: white;
+        font-size: large;
+        font-weight: 700;
       }
     </style>
   </head>
@@ -81,6 +96,10 @@
             <button onclick="hidemodal()" id="hide">閉じる</button>
         </div>
       </div>
+      <div class="square" id="square1">
+        <p id="difficulty">イージー</p>
+      </div>
+      </div>
     </div>
 
     <script>
@@ -89,6 +108,8 @@
         const resulttext = document.getElementById("resulttext");
         const resultmodal = document.getElementById("modal-back");
         const resultimage = document.getElementById("resultimage");
+        const square = document.getElementById("square1");
+        const difficulty = document.getElementById("difficulty");
 
         form.addEventListener("submit", function(e) {
             e.preventDefault();
@@ -114,6 +135,19 @@
         resultmodal.addEventListener("click", function (event) {
             if (event.target === resultmodal) {
                 hidemodal();
+            }
+        });
+
+        square.addEventListener("click", function() {
+            if(square.style.backgroundColor === "black") {
+                square.style.backgroundColor = "blue";
+                difficulty.textContent = "ノーマル";
+            } else if(square.style.backgroundColor === "blue") {
+                square.style.backgroundColor = "red";
+                difficulty.textContent = "ハード";
+            } else {
+                square.style.backgroundColor = "black";
+                difficulty.textContent = "イージー";
             }
         });
     </script>
