@@ -90,7 +90,7 @@
         form.addEventListener("submit", function(e) {
             e.preventDefault();
 
-            if(useranswer.value === "こたえ") {
+            if(useranswer.value === "こたえ" || useranswer.value === "答え" || useranswer.value === "コタエ") {
                 resulttext.textContent = "正解！おめでとう！";
             } else {
                 resulttext.textContent = "残念...間違ってるよ";
