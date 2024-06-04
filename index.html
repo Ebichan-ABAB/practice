@@ -43,15 +43,16 @@
         width: 70%;
         height: 80%;
         background-color: white;
-        margin: auto;
         text-align: center;
         margin: auto;
+        flex-direction: column;
       }
 
       p {
         color: black;
         font-family: sans-serif;
         font-weight: 700;
+        font-size: large;
         font-size: medium;
       }
 
@@ -72,6 +73,11 @@
       <div class="modal" id="modal-back">
         <div class="modal" id="modal-content">
             <p id="resulttext"></p>
+            <img
+            id="resultimage"
+            src=""
+            alt=""
+            />
             <button onclick="hidemodal()" id="hide">閉じる</button>
         </div>
       </div>
@@ -82,21 +88,24 @@
         const form = document.getElementById("answerform");
         const resulttext = document.getElementById("resulttext");
         const resultmodal = document.getElementById("modal-back");
-
-        function showmodal() {
-            resultmodal.style.display  = "flex";
-        }
+        const resultimage = document.getElementById("resultimage");
 
         form.addEventListener("submit", function(e) {
             e.preventDefault();
 
             if(useranswer.value === "こたえ" || useranswer.value === "答え" || useranswer.value === "コタエ") {
                 resulttext.textContent = "正解！おめでとう！";
+                resultimage.src = "images/success.png";
             } else {
                 resulttext.textContent = "残念...間違ってるよ";
+                resultimage.src = "images/fail.png";
             }
             showmodal();
         });
+
+        function showmodal() {
+            resultmodal.style.display  = "flex";
+        }
 
         function hidemodal() {
             resultmodal.style.display = "none";
